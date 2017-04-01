@@ -1,7 +1,7 @@
 package com.leeo.web.filter;
 
 import java.io.IOException;
-import java.io.PrintStream;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -11,8 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
 @WebFilter(filterName="myFilter", urlPatterns={"/*"})
-public class MyFilter
-  implements Filter
+public class MyFilter implements Filter
 {
   public void destroy()
   {

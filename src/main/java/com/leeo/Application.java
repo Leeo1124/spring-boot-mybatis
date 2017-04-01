@@ -1,9 +1,7 @@
 package com.leeo;
 
-import org.activiti.spring.boot.SecurityAutoConfiguration;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.actuate.autoconfigure.ManagementWebSecurityAutoConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -17,10 +15,11 @@ import com.leeo.common.mapper.MyMapper;
 @ServletComponentScan
 @SpringBootApplication
 @MapperScan(basePackages={"com.leeo.**.mapper"}, markerInterface=MyMapper.class)
-@EnableAutoConfiguration(exclude={
-		org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration.class,
-		SecurityAutoConfiguration.class,
-		ManagementWebSecurityAutoConfiguration.class})
+@EnableAutoConfiguration(exclude = {
+        org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration.class,
+        org.activiti.spring.boot.SecurityAutoConfiguration.class,
+        org.springframework.boot.actuate.autoconfigure.ManagementWebSecurityAutoConfiguration.class
+})
 public class Application
 {
   @Bean

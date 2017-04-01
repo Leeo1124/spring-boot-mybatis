@@ -24,5 +24,6 @@ public class LoginController
     model.addAttribute("modelId", Integer.valueOf(30010));
 
     return "modeler";
+//    return "redirect:/modeler.html?modelId=30010";
   }
 }
